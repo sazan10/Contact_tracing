@@ -10,6 +10,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.SQLException;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
@@ -29,6 +30,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
@@ -41,6 +43,7 @@ import androidx.core.app.NotificationCompat;
 
 public class MyService extends Service {
 
+    DatabaseHandler db = new DatabaseHandler(this);
     private static final int NOTIF_ID = 1338;
     private static final String NOTIF_CHANNEL_ID = "Test";
     Handler handler = new Handler();
@@ -66,6 +69,17 @@ public class MyService extends Service {
     public void onCreate() {
         Log.e(TAG, "onCreate");
         initializeLocationManager();
+//        List<LocationClass> location1List;
+//        location1List = db.getAllLocationClasss();
+//
+//
+//        for(int i = 0 ; i<location1List.size(); i++)
+//    {
+//        Log.i("array",location1List.get(i).getLatitude().toString());
+//        Log.i("array",location1List.get(i).getLongitude().toString());
+//        Log.i("array",location1List.get(i).getTime().toString());
+//
+//    }
         try {
             mLocationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER, LOCATION_INTERVAL, LOCATION_DISTANCE,
@@ -195,7 +209,13 @@ public class MyService extends Service {
 
         @Override
         public void onLocationChanged(Location location) {
-            Log.i(TAG, "onLocationChanged: " + location);
+            Log.i(TAG, "onLocationChanged: " + String.valueOf(location.getTime()) +"   "+ String.valueOf(location.getLatitude()) +"     " +String.valueOf(location.getLongitude()));
+            try {
+                db.addLocation(new LocationClass(location.getLatitude(), location.getLongitude(), String.valueOf(location.getTime())));
+            }
+            catch (SQLException e) {
+                Log.i("database error", e.toString());
+            }
             mLastLocation.set(location);
         }
 
