@@ -16,4 +16,13 @@
         android:padding="@dimen/appbar_padding"
         android:text="Select Your home location"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="35dp"
+        android:text="SAVE" />
 </fragment>

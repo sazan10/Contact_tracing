@@ -206,28 +206,48 @@ public class MyService extends Service {
         public LocationListener(String provider) {
             Log.e(TAG, "LocationListener " + provider);
             mLastLocation = new Location(provider);
+            Log.e("last location", mLastLocation.toString());
         }
 
         @Override
         public void onLocationChanged(Location location) {
-            Log.i(TAG, "onLocationChanged: " + String.valueOf(location.getTime()) +"   "+ String.valueOf(location.getLatitude()) +"     " +String.valueOf(location.getLongitude()));
+            Log.i(TAG, "onLocationChanged: " + String.valueOf(location.getTime()) + "   " + String.valueOf(location.getLatitude()) + "     " + String.valueOf(location.getLongitude()));
             SharedPreferences sharedpreferences = getSharedPreferences("LocationPref", Context.MODE_PRIVATE);
 
-            SharedPreferences.Editor editor = sharedpreferences.edit();
-            double latitude =location.getLatitude();
-            double longitude =location.getLongitude();
-            editor.putString("HomeLat", String.valueOf(latitude));
-            editor.putString("HomeLong", String.valueOf(longitude));
-            editor.commit();
-            try {
-                db.addLocation(new LocationClass(latitude, longitude, String.valueOf(location.getTime())));
-            }
-            catch (SQLException e) {
-                Log.i("database error", e.toString());
-            }
-            mLastLocation.set(location);
-        }
 
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+            double homeLat = Double.valueOf(sharedpreferences.getString("HomeLat", "27.689838836059117"));
+            double homeLong = Double.valueOf(sharedpreferences.getString("HomeLong", "85.31805333556801"));
+            if(homeLat !=0.0 )
+            {
+            Location homeLocation = new Location("point A");
+            Log.i("initial distance", homeLat + "   " + homeLong + "    " + latitude + "    " + longitude);
+            homeLocation.setLatitude(homeLat);
+            homeLocation.setLongitude(homeLong);
+
+            Location locationB = new Location("point B");
+
+            locationB.setLatitude(latitude);
+            locationB.setLongitude(longitude);
+            float distance = homeLocation.distanceTo(locationB);
+            Log.i("distance", String.valueOf(distance));
+//            SharedPreferences.Editor editor = sharedpreferences.edit();
+//            editor.putString("HomeLat", String.valueOf(latitude));
+//            editor.putString("HomeLong", String.valueOf(longitude));
+//            editor.commit();
+            if (distance >= 50) {
+                try {
+                    db.addLocation(new LocationClass(latitude, longitude, String.valueOf(location.getTime())));
+                } catch (SQLException e) {
+                    Log.i("database error", e.toString());
+                }
+                mLastLocation.set(location);
+            }}
+            else {
+                Log.i("distance ", "value is 0000000");
+            }
+        }
         @Override
         public void onProviderDisabled(String provider) {
             Log.e(TAG, "onProviderDisabled: " + provider);
@@ -264,5 +284,25 @@ public class MyService extends Service {
         if (mLocationManager == null) {
             mLocationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
         }
+    }
+
+    public static double distance(double lat1, double lat2, double lon1,
+                                  double lon2, double el1, double el2) {
+
+        final int R = 6371; // Radius of the earth
+
+        double latDistance = Math.toRadians(lat2 - lat1);
+        double lonDistance = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))
+                * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double distance = R * c * 1000; // convert to meters
+
+        double height = el1 - el2;
+
+        distance = Math.pow(distance, 2) + Math.pow(height, 2);
+
+        return Math.sqrt(distance);
     }
 }
