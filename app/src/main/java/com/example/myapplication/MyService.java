@@ -9,6 +9,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.SQLException;
 import android.graphics.Color;
@@ -210,8 +211,16 @@ public class MyService extends Service {
         @Override
         public void onLocationChanged(Location location) {
             Log.i(TAG, "onLocationChanged: " + String.valueOf(location.getTime()) +"   "+ String.valueOf(location.getLatitude()) +"     " +String.valueOf(location.getLongitude()));
+            SharedPreferences sharedpreferences = getSharedPreferences("LocationPref", Context.MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            double latitude =location.getLatitude();
+            double longitude =location.getLongitude();
+            editor.putString("HomeLat", String.valueOf(latitude));
+            editor.putString("HomeLong", String.valueOf(longitude));
+            editor.commit();
             try {
-                db.addLocation(new LocationClass(location.getLatitude(), location.getLongitude(), String.valueOf(location.getTime())));
+                db.addLocation(new LocationClass(latitude, longitude, String.valueOf(location.getTime())));
             }
             catch (SQLException e) {
                 Log.i("database error", e.toString());
