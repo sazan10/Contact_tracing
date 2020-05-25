@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,6 +20,8 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +34,15 @@ import android.widget.Toast;
 
 import com.example.myapplication.ui.main.SectionsPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     Intent intent;
     Intent mapIntent;
+    TabLayout tabs;
+    DatabaseHandler db = new DatabaseHandler(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -47,12 +54,19 @@ public class MainActivity extends AppCompatActivity {
         Log.i("hello","d");
 
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+//        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+
         ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
+        adapter.addFrag(new Tab1Fragment());
+        adapter.addFrag(new Tab2Fragment());
+
+        viewPager.setAdapter(adapter);
+//        viewPager.setAdapter(sectionsPagerAdapter);
+        tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
+
         intent = new Intent(this, MyService.class);
 
         statusCheck();
@@ -118,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void statusCheck() {
+    public void statusCheck() { //checks if location is enabled
         final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
@@ -142,5 +156,30 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog alert = builder.create();
         alert.show();
     }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        void addFrag(Fragment fragment) {
+            mFragmentList.add(fragment);
+        }
+    }
+
 
 }

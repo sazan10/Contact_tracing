@@ -45,6 +45,8 @@ import androidx.core.app.NotificationCompat;
 public class MyService extends Service {
 
     DatabaseHandler db = new DatabaseHandler(this);
+
+
     private static final int NOTIF_ID = 1338;
     private static final String NOTIF_CHANNEL_ID = "Test";
     Handler handler = new Handler();
