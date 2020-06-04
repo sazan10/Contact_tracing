@@ -11,9 +11,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.NonNull;
@@ -22,17 +20,12 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-import com.example.myapplication.ui.main.SectionsPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 //        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 
         ViewPager viewPager = findViewById(R.id.view_pager);
-        adapter.addFrag(new Tab1Fragment());
-        adapter.addFrag(new Tab2Fragment());
+        adapter.addFrag(new Tab1Fragment(),"Visited  Location");
+        adapter.addFrag(new Tab2Fragment(), "News");
 
         viewPager.setAdapter(adapter);
 //        viewPager.setAdapter(sectionsPagerAdapter);
@@ -160,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private final List<Fragment> mFragmentList = new ArrayList<>();
-
+        private final List<String> mFragmentTitleList = new ArrayList<>();
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -176,8 +169,18 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        void addFrag(Fragment fragment) {
+        void addFrag(Fragment fragment, String title) {
             mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            //here you can set your custom title by using position
+            if (position==1)
+                return "Title";
+            else
+                return mFragmentTitleList.get(position);
         }
     }
 
