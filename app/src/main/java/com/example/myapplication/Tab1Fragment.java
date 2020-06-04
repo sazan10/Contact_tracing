@@ -40,7 +40,7 @@ public class Tab1Fragment extends ListFragment {
         int size = location1List.size();
         String[] scripts = new String [size];
 
- long time;
+        long time;
         LocalDateTime date;
         Instant instant;
         if(location1List.size()>0) {
