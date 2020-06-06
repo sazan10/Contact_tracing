@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new Tab1Fragment(),"Visited  Location");
         adapter.addFrag(new Tab2Fragment(), "News");
 
+
+
         viewPager.setAdapter(adapter);
 //        viewPager.setAdapter(sectionsPagerAdapter);
         tabs = findViewById(R.id.tabs);
@@ -177,9 +179,9 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
 
             //here you can set your custom title by using position
-            if (position==1)
-                return "Title";
-            else
+//            if (position==1)
+//                return "Title";
+//            else
                 return mFragmentTitleList.get(position);
         }
     }

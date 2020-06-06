@@ -9,13 +9,20 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Collections;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.ListFragment;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -25,14 +32,17 @@ import okhttp3.Response;
 
 public class Tab2Fragment extends ListFragment {
     ListView mainListView ;
-
+    ListViewAdapter adapter;
     OkHttpClient client = new OkHttpClient();
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+          adapter = new ListViewAdapter() ;
+        setListAdapter(adapter);
+
         //            String d= String.valueOf(doGetRequest("http://192.168.43.192:3000/rss/"));
 //        View rootView = inflater.inflate(R.layout.frag2, container, false);
 //    final TextView myAwesomeTextView= (TextView) rootView.findViewById(R.id.textView1);
@@ -57,18 +67,52 @@ public class Tab2Fragment extends ListFragment {
                     final String myResponse = response.body().string();
 //                    return myResponse;
                     Log.i("Response",myResponse);
+                    JSONObject reader = null;
+                    try {
+                        reader = new JSONObject(myResponse);
+                        JSONArray items = reader.getJSONArray("items");
+
+                        for (int i=0; i<items.length(); i++) {
+                            JSONObject all = items.getJSONObject(i);
+                            String title = all.getString("title");
+                            String creator = all.getString("creator");
+                            adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.news),
+                                    title, creator) ;
+
+
+                        }
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
 //                            myAwesomeTextView.setText(myResponse);
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                                    android.R.layout.simple_list_item_1, Collections.singletonList(myResponse));
-                            setListAdapter(adapter);
+//                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+//                                    android.R.layout., Collections.singletonList(myResponse));
+//                            CustomListAdapter adapter = new CustomListAdapter(getActivity().getBaseContext(), myResponse);
+//                            setListAdapter(adapter);
+                           adapter.notifyDataSetChanged();
+
+
                         }
                     });
                 }
             }
         });
+
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
 
 
 //            Log.i("rss feed",d);
@@ -80,12 +124,17 @@ public class Tab2Fragment extends ListFragment {
 
 
 
-
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        // TODO implement some logic
-    }
+    public void onListItemClick (ListView l, View v, int position, long id) {
+        // get TextView's Text.
+//        ListViewItem item = (ListViewItem) l.getItemAtPosition(position) ;
+//
+//        String titleStr = item.getTitle() ;
+//        String descStr = item.getDesc() ;
+//        Drawable iconDrawable = item.getIcon() ;
 
+        // TODO : use item data.
+    }
 //    String doGetRequest(String url) throws IOException {
 //        Request request = new Request.Builder()
 //                .url(url)
