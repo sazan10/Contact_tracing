@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
@@ -76,8 +80,25 @@ public class Tab2Fragment extends ListFragment {
                             JSONObject all = items.getJSONObject(i);
                             String title = all.getString("title");
                             String creator = all.getString("creator");
+                            String date = all.getString("pubDate");
+                            SimpleDateFormat format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
+                            Date date1 = null;
+                            String strDate= "n/a";
+                            try {
+                                date1 = format.parse(date);
+                                Log.e("dater ", date1.toString());
+                                SimpleDateFormat format2 = new SimpleDateFormat("EEE, d MMM yyyy", Locale.ENGLISH);
+                                strDate = format2.format(date1);
+                                Log.e("dater ", strDate);
+
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                                Log.i("dater error", e.toString());
+                            }
+//                            String[] arrOfStr = date.split("2020", 2);
+//                            Log.i("date from backend", date1.toString());
                             adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.news),
-                                    title, creator) ;
+                                    title, creator+ " " + strDate) ;
 
 
                         }
