@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,13 +49,17 @@ public class Tab2Fragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
           adapter = new ListViewAdapter() ;
         setListAdapter(adapter);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_nav);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //            String d= String.valueOf(doGetRequest("http://192.168.43.192:3000/rss/"));
 //        View rootView = inflater.inflate(R.layout.frag2, container, false);
 //    final TextView myAwesomeTextView= (TextView) rootView.findViewById(R.id.textView1);
 //            String d = example.run("http://192.168.43.192:3000/rss/") ;
         Request request = new Request.Builder()
-                .url("http://192.168.43.192:3000/rss/")
+//                .url("http://192.168.43.192:3000/rss/")
+                .url("http://192.168.10.20:3000/rss/")
+
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
         Response response = null;
@@ -81,6 +88,7 @@ public class Tab2Fragment extends ListFragment {
                             String title = all.getString("title");
                             String creator = all.getString("creator");
                             String date = all.getString("pubDate");
+                            String link = all.getString("link");
                             SimpleDateFormat format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
                             Date date1 = null;
                             String strDate= "n/a";
@@ -98,7 +106,7 @@ public class Tab2Fragment extends ListFragment {
 //                            String[] arrOfStr = date.split("2020", 2);
 //                            Log.i("date from backend", date1.toString());
                             adapter.addItem(ContextCompat.getDrawable(getActivity(), R.drawable.news),
-                                    title, creator+ " " + strDate) ;
+                                    title, creator+ " " + strDate,link) ;
 
 
                         }
@@ -148,9 +156,12 @@ public class Tab2Fragment extends ListFragment {
     @Override
     public void onListItemClick (ListView l, View v, int position, long id) {
         // get TextView's Text.
-//        ListViewItem item = (ListViewItem) l.getItemAtPosition(position) ;
+        ListViewItem item = (ListViewItem) l.getItemAtPosition(position) ;
 //
-//        String titleStr = item.getTitle() ;
+        String linkStr = item.getLinkStr() ;
+        Intent myIntent = new Intent(getActivity(), NewsDetailActivity.class);
+        myIntent.putExtra("link", linkStr); //Optional parameters
+        this.startActivity(myIntent);
 //        String descStr = item.getDesc() ;
 //        Drawable iconDrawable = item.getIcon() ;
 

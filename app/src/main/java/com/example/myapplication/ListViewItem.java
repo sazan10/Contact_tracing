@@ -7,6 +7,7 @@ public class ListViewItem {
     private Drawable iconDrawable ;
     private String titleStr ;
     private String descStr ;
+    private String linkStr;
 
     public void setIcon(Drawable icon) {
         iconDrawable = icon ;
@@ -26,5 +27,13 @@ public class ListViewItem {
     }
     public String getDesc() {
         return this.descStr ;
+    }
+
+    public String getLinkStr() {
+        return linkStr;
+    }
+
+    public void setLinkStr(String linkStr) {
+        this.linkStr = linkStr;
     }
 }
