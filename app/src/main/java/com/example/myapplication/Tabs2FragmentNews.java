@@ -37,7 +37,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class Tab2Fragment extends ListFragment {
+public class Tabs2FragmentNews extends ListFragment {
     ListView mainListView ;
     ListViewAdapter adapter;
     OkHttpClient client = new OkHttpClient();
@@ -47,10 +47,8 @@ public class Tab2Fragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-          adapter = new ListViewAdapter() ;
+        adapter = new ListViewAdapter() ;
         setListAdapter(adapter);
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_nav);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //            String d= String.valueOf(doGetRequest("http://192.168.43.192:3000/rss/"));
 //        View rootView = inflater.inflate(R.layout.frag2, container, false);
@@ -127,7 +125,7 @@ public class Tab2Fragment extends ListFragment {
 //                                    android.R.layout., Collections.singletonList(myResponse));
 //                            CustomListAdapter adapter = new CustomListAdapter(getActivity().getBaseContext(), myResponse);
 //                            setListAdapter(adapter);
-                           adapter.notifyDataSetChanged();
+                            adapter.notifyDataSetChanged();
 
 
                         }

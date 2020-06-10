@@ -33,6 +33,7 @@ public class Tab1Fragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
 //        ArrayList<String> LocationArray = new ArrayList<String>();
         db = new DatabaseHandler(getActivity());
          List<LocationClass> location1List;
