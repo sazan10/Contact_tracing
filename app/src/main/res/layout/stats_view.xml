@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_marginTop="20dp"
+        >
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            card_view:cardCornerRadius="8dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            card_view:cardBackgroundColor="@color/colorBottomTab"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
+            <TextView
+                    android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="24sp"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:id="@+id/textTitle1"
+                android:text="POSITIVE"/>
+    <TextView
+                    android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textValue1"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            card_view:cardCornerRadius="8dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            card_view:cardBackgroundColor="@color/colorBottomTab"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="24sp"
+                android:layout_margin="10dp"
+                android:id="@+id/textTitle2"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+
+                android:text="RECOVERED"/>
+        <TextView
+                    android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/textValue2"
+
+            android:layout_margin="10dp"
+
+            android:textSize="36sp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_weight="2"-->
+
+<!--        android:layout_marginTop="20dp"-->
+<!--        >-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--            card_view:cardCornerRadius="8dp"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            card_view:cardBackgroundColor="@color/colorBottomTab"-->
+<!--            >-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical" >-->
+<!--                <TextView-->
+<!--android:layout_gravity="center"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:textSize="24sp"-->
+<!--                    android:layout_margin="10dp"-->
+
+<!--                    android:textColor="@color/colorPrimary"-->
+
+<!--                    android:text="DEATHS"/>-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:id="@+id/death"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/colorPrimary"-->
+
+<!--                android:textSize="36sp" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--            card_view:cardCornerRadius="8dp"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="20dp"-->
+<!--            card_view:cardBackgroundColor="@color/colorBottomTab"-->
+
+<!--            >-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:textSize="24sp"-->
+<!--                android:text="TESTED"/>-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:id="@+id/tested"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:textSize="36sp"/>-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_weight="2"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        >-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--            card_view:cardCornerRadius="8dp"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            card_view:cardBackgroundColor="@color/colorBottomTab"-->
+<!--            >-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:orientation="vertical" >-->
+<!--                <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:textColor="@color/colorPrimary"-->
+<!--                    android:layout_margin="10dp"-->
+
+<!--                    android:textSize="24sp"-->
+<!--                android:text="NEW CASES"/>-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:id="@+id/today_newcase"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:textSize="36sp" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+<!--            card_view:cardCornerRadius="8dp"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_weight="1"-->
+<!--            card_view:cardBackgroundColor="@color/colorBottomTab"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignRight="@+id/positive"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:textSize="24sp"-->
+<!--                android:textColor="@color/colorPrimary"-->
+<!--                android:text="NEW DEATHS"/>-->
+<!--            <TextView-->
+<!--                    android:layout_gravity="center"-->
+<!--                android:id="@+id/today_death"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+
+<!--                android:textSize="36sp" />-->
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--    </LinearLayout>-->
+</LinearLayout>
+
+

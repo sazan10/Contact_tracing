@@ -56,6 +56,8 @@ public class Tab1Fragment extends ListFragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, scripts);
         setListAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
     }
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {

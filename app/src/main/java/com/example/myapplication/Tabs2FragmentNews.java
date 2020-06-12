@@ -39,7 +39,7 @@ import okhttp3.Response;
 
 public class Tabs2FragmentNews extends ListFragment {
     ListView mainListView ;
-    ListViewAdapter adapter;
+    NewsListViewAdapter adapter;
     OkHttpClient client = new OkHttpClient();
 
 
@@ -47,7 +47,7 @@ public class Tabs2FragmentNews extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        adapter = new ListViewAdapter() ;
+        adapter = new NewsListViewAdapter() ;
         setListAdapter(adapter);
 
         //            String d= String.valueOf(doGetRequest("http://192.168.43.192:3000/rss/"));
@@ -154,7 +154,7 @@ public class Tabs2FragmentNews extends ListFragment {
     @Override
     public void onListItemClick (ListView l, View v, int position, long id) {
         // get TextView's Text.
-        ListViewItem item = (ListViewItem) l.getItemAtPosition(position) ;
+        NewsListViewItem item = (NewsListViewItem) l.getItemAtPosition(position) ;
 //
         String linkStr = item.getLinkStr() ;
         Intent myIntent = new Intent(getActivity(), NewsDetailActivity.class);

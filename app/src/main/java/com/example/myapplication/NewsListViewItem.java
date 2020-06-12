@@ -1,9 +1,10 @@
 package com.example.myapplication;
 
 
+
 import android.graphics.drawable.Drawable;
 
-public class ListViewItem {
+public class NewsListViewItem {
     private Drawable iconDrawable ;
     private String titleStr ;
     private String descStr ;

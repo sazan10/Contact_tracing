@@ -1,4 +1,5 @@
 package com.example.myapplication;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -12,13 +13,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ListViewAdapter extends BaseAdapter {
+public class NewsListViewAdapter extends BaseAdapter {
     // Adapter ArrayList
-    private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
+    private ArrayList<NewsListViewItem> listViewItemList = new ArrayList<NewsListViewItem>() ;
 //    private ProgressBar spinner;
 
     // ListViewAdapter
-    public ListViewAdapter() {
+    public NewsListViewAdapter() {
 
     }
 
@@ -49,7 +50,7 @@ public class ListViewAdapter extends BaseAdapter {
 //        spinner = (ProgressBar) convertView2.findViewById(R.id.progressBar1);
 
         // Data Set(listViewItemList)
-        ListViewItem listViewItem = listViewItemList.get(position);
+        NewsListViewItem listViewItem = listViewItemList.get(position);
 
 
         iconImageView.setImageDrawable(listViewItem.getIcon());
@@ -57,7 +58,7 @@ public class ListViewAdapter extends BaseAdapter {
         descTextView.setText(listViewItem.getDesc());
 //Log.i("size", String.valueOf(listViewItemList.size()));
 //        if(listViewItemList.size()>0)
-            return convertView;
+        return convertView;
 //        else return convertView2;
     }
 
@@ -74,12 +75,12 @@ public class ListViewAdapter extends BaseAdapter {
     }
     //add item
     public void addItem(Drawable icon, String title, String desc,String link) {
-        ListViewItem item = new ListViewItem();
+        NewsListViewItem item = new NewsListViewItem();
 
         item.setIcon(icon);
         item.setTitle(title);
         item.setDesc(desc);
-    item.setLinkStr(link);
+        item.setLinkStr(link);
         listViewItemList.add(item);
     }
 }
