@@ -70,14 +70,17 @@ public class Tabs2FragmentStats extends ListFragment {
 
                     try {
                         reader = new JSONObject(myResponse);
-                        final String deathStr = reader.getString("today_death");
+                        final String newDeathStr = reader.getString("today_death");
                         final String recoveredStr = reader.getString("recovered");
+                        final String recoveredTodayStr = reader.getString("today_recovered");
+                        final String testedStr = reader.getString("rdt_test");
+
                         final String positiveStr = reader.getString("positive");
                         final String newCaseStr = reader.getString("today_newcase");
-                        String [] statElements = {"POSITIVE", "NEW CASES", "DEATHS", "RECOVERED", "NEW DEATHS", "TESTED"};
-                        adapter.addItem(statElements[0], positiveStr, statElements[1], recoveredStr) ;
-                        adapter.addItem(statElements[2], newCaseStr, statElements[3], deathStr) ;
-                        adapter.addItem(statElements[4], positiveStr, statElements[5], recoveredStr) ;
+                        String [] statElements = {"POSITIVE", "NEW CASES", "NEW DEATHS", "RECOVERED", "NEW RECOVERY", "TESTED"};
+                        adapter.addItem(statElements[0], positiveStr, statElements[1], newCaseStr) ;
+                        adapter.addItem(statElements[2], newDeathStr, statElements[3], recoveredStr) ;
+                        adapter.addItem(statElements[4], recoveredTodayStr, statElements[5], testedStr) ;
 
 
                         getActivity().runOnUiThread(new Runnable() {
