@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ContactsListViewAdapter extends BaseAdapter {
+public class ContactsListViewAdapter extends BaseAdapter  {
     // Adapter ArrayList
     private ArrayList<ContactsListViewItem> listViewItemList = new ArrayList<ContactsListViewItem>() ;
-//    private ProgressBar spinner;
+    protected ProgressBar spinner;
 
     // ListViewAdapter
     public ContactsListViewAdapter() {
@@ -38,30 +38,31 @@ public class ContactsListViewAdapter extends BaseAdapter {
 
         // "listview_item" Layout
         if (convertView == null) {
+
             convertView = inflater.inflate(R.layout.contacts_view, parent, false);
-
         }
-        // View convertView2 = inflater.inflate(R.layout.listview_item, parent, false);
+            // View convertView2 = inflater.inflate(R.layout.listview_item, parent, false);
 
-        // Layout inflate
-        TextView hospital = (TextView) convertView.findViewById(R.id.hospitalText) ;
-        TextView province = (TextView) convertView.findViewById(R.id.provinceText) ;
-        TextView district= (TextView) convertView.findViewById(R.id.districtText) ;
-        TextView municipality = (TextView) convertView.findViewById(R.id.municipalityText) ;
-        TextView contact = (TextView) convertView.findViewById(R.id.contactText) ;
+            // Layout inflate
+            TextView hospital = (TextView) convertView.findViewById(R.id.hospitalText);
+            TextView province = (TextView) convertView.findViewById(R.id.provinceText);
+            TextView district = (TextView) convertView.findViewById(R.id.districtText);
+            TextView municipality = (TextView) convertView.findViewById(R.id.municipalityText);
+            TextView contact = (TextView) convertView.findViewById(R.id.contactText);
 
-        // spinner = (ProgressBar) convertView2.findViewById(R.id.progressBar1);
-        // Data Set(listViewItemList)
-        ContactsListViewItem listViewItem = listViewItemList.get(position);
-        hospital.setText(listViewItem.getHospitalStr());
-        province.setText(listViewItem.getProvinceStr());
-        district.setText(listViewItem.getDistrictStr());
-        municipality.setText(listViewItem.getMunicipalityStr());
-        contact.setText(listViewItem.getContactStr());
+            // spinner = (ProgressBar) convertView2.findViewById(R.id.progressBar1);
+            // Data Set(listViewItemList)
+            ContactsListViewItem listViewItem = listViewItemList.get(position);
+            hospital.setText(listViewItem.getHospitalStr());
+            province.setText(listViewItem.getProvinceStr());
+            district.setText(listViewItem.getDistrictStr());
+            municipality.setText(listViewItem.getMunicipalityStr());
+            contact.setText(listViewItem.getContactStr());
 
-        //Log.i("size", String.valueOf(listViewItemList.size()));
-        // if(listViewItemList.size()>0)
-        return convertView;
+            //Log.i("size", String.valueOf(listViewItemList.size()));
+            // if(listViewItemList.size()>0)
+            return convertView;
+
         // else return convertView2;
     }
 
@@ -84,7 +85,6 @@ public class ContactsListViewAdapter extends BaseAdapter {
         item.setMunicipalityStr(municipality);
         item.setDistrictStr(district);
         item.setContactStr(contacts);
-
         listViewItemList.add(item);
     }
 }

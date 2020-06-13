@@ -51,7 +51,7 @@ public class Tabs2FragmentContacts extends ListFragment {
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
         Response response = null;
-
+//adapter.spinner.setVisibility(View.VISIBLE);
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

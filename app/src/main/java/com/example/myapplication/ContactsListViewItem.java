@@ -48,4 +48,7 @@ public class ContactsListViewItem {
     public void setContactStr(String contactStr) {
         this.contactStr = contactStr;
     }
+
+    public void setVisibility(boolean visibility) {
+    }
 }

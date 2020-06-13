@@ -56,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         adapter.addFrag(new Tab1Fragment(),"Visited  Location");
+        adapter.addFrag(new Questionnaire(), "Health Check");
         adapter.addFrag(new TabsFrag(), "News/Stats");
+        adapter.addFrag(new ReportFragment(), "Report");
+        adapter.addFrag(new ROIFragment(), "ROI");
 
 
 
