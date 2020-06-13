@@ -41,7 +41,7 @@ public class Tabs2FragmentNews extends ListFragment {
     ListView mainListView ;
     NewsListViewAdapter adapter;
     OkHttpClient client = new OkHttpClient();
-    String server_ip = getString(R.string.server_ip);
+//    String server_ip = getActivity().getString(R.string.server_ip);
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -57,7 +57,7 @@ public class Tabs2FragmentNews extends ListFragment {
 //            String d = example.run("http://192.168.43.192:3000/rss/") ;
         Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url(server_ip+"/rss/")
+                .url("http://192.168.10.20:3000/rss/")
 
 //                .url("https://reqres.in/api/users?page=2")
                 .build();

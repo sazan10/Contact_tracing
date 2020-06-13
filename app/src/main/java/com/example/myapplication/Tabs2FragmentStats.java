@@ -35,7 +35,7 @@ public class Tabs2FragmentStats extends ListFragment {
 
     OkHttpClient client = new OkHttpClient();
     StatsListViewAdapter adapter;
-    String server_ip = getString(R.string.server_ip);
+//    String server_ip = getContext().getString(R.string.server_ip);
 
 //    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -47,7 +47,7 @@ public class Tabs2FragmentStats extends ListFragment {
 
                 Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url(server_ip+"/mohp/")
+                .url("http://192.168.10.20:3000/mohp/")
 
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
