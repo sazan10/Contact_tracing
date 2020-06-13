@@ -177,7 +177,7 @@ public class MyService extends Service {
         String channelId = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? createNotificationChannel(notificationManager) : "";
         startForeground(NOTIF_ID, new NotificationCompat.Builder(this,channelId) // don't forget create a notification channel first
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText("Service is running background")
 //                .setContentIntent(pendingIntent)
