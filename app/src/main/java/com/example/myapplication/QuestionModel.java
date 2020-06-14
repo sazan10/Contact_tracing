@@ -1,20 +1,24 @@
 package com.example.myapplication;
 
+/**
+ * Created by swain on 3/1/18.
+ */
+
 public class QuestionModel {
-    private String name;
+    private String question;
     private boolean check;
 
-    public QuestionModel(String name, Boolean check) {
-        this.name = name;
+    public QuestionModel (String question, Boolean check) {
+        this.question = question;
         this.check = check;
     }
 
-    public String getName() {
-        return name;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
     public boolean isCheck() {
@@ -24,4 +28,5 @@ public class QuestionModel {
     public void setCheck(boolean check) {
         this.check = check;
     }
+
 }
