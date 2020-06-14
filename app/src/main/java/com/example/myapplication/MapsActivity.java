@@ -36,7 +36,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        Log.i("INFO", "on create map activity");
         saveButton=(Button) findViewById(R.id.button1);
         saveButton.setOnClickListener( new View.OnClickListener() {
 
@@ -84,7 +83,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng home = new LatLng(HomeLat, HomeLong);
         mMap.addMarker(new MarkerOptions().position(home).title("Marker in Kupondole"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(home,14));
-        Log.i("INFO", "ASSasas");
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
