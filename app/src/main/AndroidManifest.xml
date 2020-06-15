@@ -53,7 +53,7 @@
             android:value="@string/google_maps_key" />
 
         <service
-            android:name=".MyService"
+            android:name=".service.MyService"
             android:enabled="true"
             android:exported="true" />
     </application>

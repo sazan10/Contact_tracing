@@ -1,11 +1,12 @@
-package com.example.myapplication;
+package com.example.myapplication.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
+
+import com.example.myapplication.classes.LocationClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // code to add the new location1
-    void addLocation(LocationClass location1) {
+    public void addLocation(LocationClass location1) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

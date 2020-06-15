@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.mainFragment;
 
 import android.os.Build;
 import android.os.Bundle;
