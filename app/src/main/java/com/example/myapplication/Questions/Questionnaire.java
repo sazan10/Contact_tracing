@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Questions;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +10,13 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.Questions.QuestionModel;
+import com.example.myapplication.Questions.QuestionModelAdapter;
+import com.example.myapplication.R;
+
 import java.util.ArrayList;
 
-//Questionairre implements DataTransferListener interface from QuestionModelAdapter
+//Questionnaire implements DataTransferListener interface from QuestionModelAdapter
 public class Questionnaire extends Fragment implements QuestionModelAdapter.DataTransferListener {
     private ListView questionListView;
     private QuestionModelAdapter questionModelAdapter;
@@ -35,13 +39,13 @@ public class Questionnaire extends Fragment implements QuestionModelAdapter.Data
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ArrayList<QuestionModel> questionList = new ArrayList<>();
-        questionList.add(new QuestionModel("Do you have fever?",false));
-        questionList.add(new QuestionModel("Do you have cough?",false));
-        questionList.add(new QuestionModel("Do you have back ache",false));
-        questionList.add(new QuestionModel("Is there any problem in respiration",false));
-        questionList.add(new QuestionModel("Do you have stomach ache?",false));
-        questionList.add(new QuestionModel("Do you have heada che?",false));
-        questionList.add(new QuestionModel("Do you sweat often?",false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs1),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs2),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs3),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs4),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs5),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs6),false));
+        questionList.add(new QuestionModel(getResources().getString(R.string.qs7),false));
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.question_fragment, container, false);

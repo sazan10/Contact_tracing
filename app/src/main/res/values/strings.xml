@@ -5,4 +5,16 @@
     <string name="title_activity_maps">Map</string>
     <string name="server_ip">http://192.168.254.254:3000</string>
 
+    <string name="qs1">Do you have fever?</string>
+    <string name="qs2">Do you have cough?</string>
+    <string name="qs3">Do you have back ache?</string>
+    <string name="qs4">Is there any problem in respiration?</string>
+    <string name="qs5">Do you have stomach ache?</string>
+    <string name="qs6">Do you have head ache?</string>
+    <string name="qs7">Do you sweat often?</string>
+
+    <string name="save">Save</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD1lkY9lOaBXVtai5BEWq6LILGaErNtrNc </string>
+
+
 </resources>

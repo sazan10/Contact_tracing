@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Questions;
 
 /**
  * Created by swain on 3/1/18.
