@@ -94,7 +94,8 @@ public class MyService extends Service {
 //        if(intent.getAction()!=null)
 //            Log.e("hello",intent.getAction().toString());
 
-        if(intent.getAction()!=null && intent.getAction().equals("STOP")){
+
+        if(intent !=null && intent.getAction()!=null && intent.getAction().equals("STOP")){
             stopSelf();
 
             return START_NOT_STICKY;
@@ -160,12 +161,13 @@ public class MyService extends Service {
         String channelId = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? createNotificationChannel(notificationManager) : "";
         startForeground(NOTIF_ID, new NotificationCompat.Builder(this,channelId) // don't forget create a notification channel first
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_launcher_background)
+//                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText("Service is running background")
 //                .setContentIntent(pendingIntent)
-                .addAction(R.drawable.ic_launcher_foreground,"STOP THE PROCESS",
-                        pendingIntent)
+//                .addAction(R.drawable.ic_launcher_foreground,"STOP THE PROCESS",
+//                        pendingIntent)
+
                 .build());
 
     }

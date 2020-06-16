@@ -27,7 +27,6 @@ public class Tab1Fragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
 //        ArrayList<String> LocationArray = new ArrayList<String>();
         db = new DatabaseHandler(getActivity());
          List<LocationClass> location1List;
@@ -37,13 +36,14 @@ public class Tab1Fragment extends ListFragment {
 
         long time;
         LocalDateTime date;
-        Instant instant;
+//        Instant instant;
         if(location1List.size()>0) {
             for (int i = 0; i < location1List.size(); i++) {
-                time = Long.valueOf(location1List.get(i).getTime());
-                instant = Instant.ofEpochMilli(time);
-                date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
-                scripts[i] = "Lat: " + location1List.get(i).getLatitude().toString() + "  Long: " + location1List.get(i).getLongitude().toString() + "  time: " + date.toString();
+//                time = Long.valueOf(location1List.get(i).getTime());
+//                instant = Instant.ofEpochMilli(time);
+//                date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+                scripts[i] = "Lat: " + location1List.get(i).getLatitude().toString() + "  Long: " + location1List.get(i).getLongitude().toString() + "  time: " + "date.toString()";
+
 
             }
         }
@@ -51,7 +51,6 @@ public class Tab1Fragment extends ListFragment {
                 android.R.layout.simple_list_item_1, scripts);
         setListAdapter(adapter);
         adapter.notifyDataSetChanged();
-
     }
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {

@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.example.myapplication.database.DatabaseHandler;
-import com.example.myapplication.mainFragment.Questionnaire;
+import com.example.myapplication.Questions.Questionnaire;
 import com.example.myapplication.mainFragment.ROIFragment;
 import com.example.myapplication.mainFragment.ReportFragment;
 import com.example.myapplication.mainFragment.Tab1Fragment;
@@ -195,7 +195,5 @@ public class MainActivity extends AppCompatActivity {
                 return mFragmentTitleList.get(position);
         }
     }
-
-
 
 }

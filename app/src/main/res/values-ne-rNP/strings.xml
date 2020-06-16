@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">gps_track</string>
+    <string name="qs1">तिमीलाई ज्वरो आएको छ?</string>
+    <string name="qs2">तिमीलाई खोकी छ</string>
+    <string name="qs3">के तपाई पछाडि दुखाई छ?</string>
+    <string name="qs4">के श्वासप्रश्वासमा कुनै समस्या छ?</string>
+    <string name="qs5">तपाईलाई पेट दुखाई छ?</string>
+    <string name="qs6">के तपाईलाई टाउको दुखाई छ?</string>
+    <string name="qs7">के तपाई प्राय: पसिना हाल्नुहुन्छ?</string>
+    <string name="save">बचत गर्नुहोस्</string>
+</resources>
