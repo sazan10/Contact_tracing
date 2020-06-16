@@ -5,6 +5,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="server_ip">http://192.168.254.254:3000</string>
 
+<!--    Questionnaire model-->
     <string name="qs1">Do you have fever?</string>
     <string name="qs2">Do you have cough?</string>
     <string name="qs3">Do you have back ache?</string>
@@ -14,7 +15,14 @@
     <string name="qs7">Do you sweat often?</string>
 
     <string name="save">Save</string>
+
+<!--    Google Maps Api Key-->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD1lkY9lOaBXVtai5BEWq6LILGaErNtrNc </string>
 
+<!--    Drawer navigation-->
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
