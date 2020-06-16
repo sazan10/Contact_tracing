@@ -1,26 +1,20 @@
-package com.example.myapplication;
+package com.example.myapplication.mainFragment;
 
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
-import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.text.DateFormat;
+import com.example.myapplication.classes.LocationClass;
+import com.example.myapplication.database.DatabaseHandler;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.RequiresApi;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 public class Tab1Fragment extends ListFragment {

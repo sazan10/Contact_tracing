@@ -11,7 +11,13 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.example.myapplication.database.DatabaseHandler;
 import com.example.myapplication.Questions.Questionnaire;
+import com.example.myapplication.mainFragment.ROIFragment;
+import com.example.myapplication.mainFragment.ReportFragment;
+import com.example.myapplication.mainFragment.Tab1Fragment;
+import com.example.myapplication.mainFragment.TabsFrag;
+import com.example.myapplication.service.MyService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 

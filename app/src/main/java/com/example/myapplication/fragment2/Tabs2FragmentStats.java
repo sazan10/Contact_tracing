@@ -1,29 +1,19 @@
-package com.example.myapplication;
+package com.example.myapplication.fragment2;
 
 
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import org.json.JSONArray;
+import com.example.myapplication.adapters.StatsListViewAdapter;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.Locale;
 
-import androidx.annotation.RequiresApi;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import okhttp3.Call;
 import okhttp3.Callback;

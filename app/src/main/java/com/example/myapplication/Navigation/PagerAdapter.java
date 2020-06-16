@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.myapplication.Questions.Questionnaire;
-import com.example.myapplication.ROIFragment;
-import com.example.myapplication.Tab1Fragment;
+import com.example.myapplication.mainFragment.ROIFragment;
+import com.example.myapplication.mainFragment.Tab1Fragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
