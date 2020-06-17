@@ -5,22 +5,26 @@
         android:id="@+id/action_bottombar_news"
         android:icon="@drawable/news1"
         android:title="News"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
 
     <item
         android:id="@+id/action_bottombar_stats"
         android:icon="@drawable/stats"
         android:title="Stats"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
 
     <item
         android:id="@+id/action_bottombar_info"
         android:icon="@drawable/info"
         android:title="General Info"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
     <item
         android:id="@+id/action_bottombar_contacts"
         android:icon="@drawable/contact"
         android:title="Contacts"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
 </menu>
