@@ -37,7 +37,7 @@ public class Tabs2FragmentStats extends ListFragment {
 
                 Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url("http://192.168.10.20:3000/mohp/")
+                .url("http://192.168.254.44:3000/mohp/")
 
 //                .url("https://reqres.in/api/users?page=2")
                 .build();

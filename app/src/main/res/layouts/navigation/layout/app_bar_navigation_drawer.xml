@@ -21,7 +21,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <!--<include layout="@layout/content_navigation_drawer" />-->
-    <include layout="@layout/activity_main1" />
+    <include layout="@layout/activity_tab_main" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

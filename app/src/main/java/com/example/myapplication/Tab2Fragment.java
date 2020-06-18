@@ -52,7 +52,7 @@ public class Tab2Fragment extends ListFragment {
 //    final TextView myAwesomeTextView= (TextView) rootView.findViewById(R.id.textView1);
 //            String d = example.run("http://192.168.43.192:3000/rss/") ;
         Request request = new Request.Builder()
-                .url("http://192.168.254.194:3000/rss/")
+                .url("http://192.168.254.44:3000/rss/")
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
         Response response = null;
