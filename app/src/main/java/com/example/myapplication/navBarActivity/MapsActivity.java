@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.navBarActivity;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapplication.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

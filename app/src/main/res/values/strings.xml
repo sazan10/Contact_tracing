@@ -1,9 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">gps_track</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="server_ip">http://192.168.254.254:3000</string>
+    <string name="tab_text_1" translatable="false">Tab 1</string>
+    <string name="tab_text_2" tools:ignore="MissingTranslation">Tab 2</string>
+    <string name="title_activity_maps" tools:ignore="MissingTranslation">Set Home</string>
+    <string name="title_activity_report" tools:ignore="MissingTranslation">Report</string>
+    <string name="server_ip" tools:ignore="MissingTranslation">http://192.168.254.44:3000</string>
 
 <!--    Questionnaire model-->
     <string name="qs1">Do you have fever?</string>
@@ -17,12 +18,13 @@
     <string name="save">Save</string>
 
 <!--    Google Maps Api Key-->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD1lkY9lOaBXVtai5BEWq6LILGaErNtrNc </string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCx0w0fISAd3epNKKKlSaL9N1wlIJyh7x0</string>
 
 <!--    Drawer navigation-->
-    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_navigation_drawer" tools:ignore="MissingTranslation">NavigationDrawerActivity</string>
+    <string name="navigation_drawer_open" tools:ignore="MissingTranslation">Open navigation drawer</string>
+    <string name="navigation_drawer_close" tools:ignore="MissingTranslation">Close navigation drawer</string>
+    <string name="action_settings" tools:ignore="MissingTranslation">Settings</string>
+    <string name="Logout" tools:ignore="MissingTranslation">Logout</string>
 
 </resources>

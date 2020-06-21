@@ -17,6 +17,7 @@ import com.example.myapplication.mainFragment.ROIFragment;
 import com.example.myapplication.mainFragment.ReportFragment;
 import com.example.myapplication.mainFragment.Tab1Fragment;
 import com.example.myapplication.mainFragment.TabsFrag;
+import com.example.myapplication.navBarActivity.MapsActivity;
 import com.example.myapplication.service.MyService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         statusCheck();
         mapIntent = new Intent(this, MapsActivity.class);
+
         if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 ContextCompat.startForegroundService(this,intent);

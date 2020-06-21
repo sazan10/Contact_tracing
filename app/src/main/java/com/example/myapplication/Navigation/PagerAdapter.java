@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.myapplication.Questions.Questionnaire;
 import com.example.myapplication.mainFragment.ROIFragment;
 import com.example.myapplication.mainFragment.Tab1Fragment;
+import com.example.myapplication.mainFragment.TabsFrag;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
@@ -22,14 +23,17 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                Tab1Fragment tab1 = new Tab1Fragment();
+                TabsFrag tab1 = new TabsFrag();
                 return tab1;
             case 1:
                 Questionnaire tab2 = new Questionnaire();
                 return tab2;
             case 2:
-                ROIFragment tab3 = new ROIFragment();
+                Tab1Fragment tab3 = new Tab1Fragment();
                 return tab3;
+            case 3:
+                ROIFragment tab4 = new ROIFragment();
+                return tab4;
             default:
                 return null;
         }

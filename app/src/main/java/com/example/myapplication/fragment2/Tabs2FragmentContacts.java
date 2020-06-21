@@ -38,7 +38,7 @@ public class Tabs2FragmentContacts extends ListFragment {
 
         Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url("http://192.168.10.20:3000/mohp/health-facility/hospital")
+                .url("http://192.168.0.33:3000/mohp/health-facility/hospital")
 
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
@@ -90,9 +90,6 @@ public class Tabs2FragmentContacts extends ListFragment {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
-
-
 
                 }
             }
