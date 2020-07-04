@@ -28,6 +28,7 @@ import com.example.myapplication.navBarActivity.MapsActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.database.DatabaseHandler;
 import com.example.myapplication.navBarActivity.ReportActivity;
+import com.example.myapplication.navBarActivity.VisitedLocationActivity;
 import com.example.myapplication.service.MyService;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -36,6 +37,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Intent mapIntent;
     Intent reportIntent;
+    Intent locationIntent;
     Intent intent;
     TabLayout tabLayout;
     @Override
@@ -52,7 +54,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         mapIntent = new Intent(this, MapsActivity.class);
         reportIntent = new Intent(this, ReportActivity.class);
-
+        locationIntent = new Intent(this, VisitedLocationActivity.class);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -86,7 +88,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
         tabLayout.addTab(tabLayout.newTab().setText("Questions"));
-        tabLayout.addTab(tabLayout.newTab().setText("Location"));
+//        tabLayout.addTab(tabLayout.newTab().setText("Location"));
         tabLayout.addTab(tabLayout.newTab().setText("ROI"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -175,7 +177,9 @@ public class NavigationDrawerActivity extends AppCompatActivity
         } else if (id == R.id.report) {
             startActivity(reportIntent);
 
-        } else if (id == R.id.nav_credits) {
+        } else if (id == R.id.visited_locations) {
+            startActivity(locationIntent);
+
 
         } else if (id == R.id.nav_logout) {
 

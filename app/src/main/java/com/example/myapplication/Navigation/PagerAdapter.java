@@ -29,11 +29,8 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 Questionnaire tab2 = new Questionnaire();
                 return tab2;
             case 2:
-                Tab1Fragment tab3 = new Tab1Fragment();
+                ROIFragment tab3 = new ROIFragment();
                 return tab3;
-            case 3:
-                ROIFragment tab4 = new ROIFragment();
-                return tab4;
             default:
                 return null;
         }

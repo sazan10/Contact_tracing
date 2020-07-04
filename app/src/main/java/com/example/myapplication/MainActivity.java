@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 //        viewPager.setAdapter(sectionsPagerAdapter);
         tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+//        FloatingActionButton fab = findViewById(R.id.fab);
 
         intent = new Intent(this, MyService.class);
 
@@ -100,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 
 
 //                MapsFragment fragment = new MapsFragment();
@@ -115,9 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-            }
-        });
-
+//            }
+//        });
+//
     }
 
     @Override

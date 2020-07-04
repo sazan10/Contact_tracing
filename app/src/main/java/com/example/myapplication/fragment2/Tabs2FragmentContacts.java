@@ -38,8 +38,8 @@ public class Tabs2FragmentContacts extends ListFragment {
 
         Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url("http://192.168.0.33:3000/mohp/health-facility/hospital")
-
+//                .url("http://192.168.0.33:3000/mohp/health-facility/hospital")
+                  .url("https://covidnasdjagno.herokuapp.com/api/covid/health-facilities/")
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
         Response response = null;
@@ -67,9 +67,9 @@ public class Tabs2FragmentContacts extends ListFragment {
                             final String hospitalStr = all.getString("name");
                             final String provinceStr = all.getString("province");
                             final String districtStr = all.getString("district");
-                            final String municipalityStr = all.getString("municipality");
+                            final String municipalityStr = all.getString("total_tested");
                             final String contactStr = all.getString("contact_number");
-                            adapter.addItem(hospitalStr,provinceStr,districtStr,municipalityStr, contactStr);
+                            adapter.addItem(hospitalStr,provinceStr,districtStr, contactStr);
                         }
 
 

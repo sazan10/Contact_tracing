@@ -47,7 +47,7 @@ public class ContactsListViewAdapter extends BaseAdapter  {
             TextView hospital = (TextView) convertView.findViewById(R.id.hospitalText);
             TextView province = (TextView) convertView.findViewById(R.id.provinceText);
             TextView district = (TextView) convertView.findViewById(R.id.districtText);
-            TextView municipality = (TextView) convertView.findViewById(R.id.municipalityText);
+//            TextView municipality = (TextView) convertView.findViewById(R.id.municipalityText);
             TextView contact = (TextView) convertView.findViewById(R.id.contactText);
 
             // spinner = (ProgressBar) convertView2.findViewById(R.id.progressBar1);
@@ -56,7 +56,7 @@ public class ContactsListViewAdapter extends BaseAdapter  {
             hospital.setText(listViewItem.getHospitalStr());
             province.setText(listViewItem.getProvinceStr());
             district.setText(listViewItem.getDistrictStr());
-            municipality.setText(listViewItem.getMunicipalityStr());
+//            municipality.setText(listViewItem.getMunicipalityStr());
             contact.setText(listViewItem.getContactStr());
 
             //Log.i("size", String.valueOf(listViewItemList.size()));
@@ -78,11 +78,11 @@ public class ContactsListViewAdapter extends BaseAdapter  {
         return listViewItemList.get(position) ;
     }
     //add item
-    public void addItem(String hospital, String province, String district,String municipality, String contacts) {
+    public void addItem(String hospital, String province, String district, String contacts) {
         ContactsListViewItem item = new ContactsListViewItem();
         item.setHospitalStr(hospital);
         item.setProvinceStr(province);
-        item.setMunicipalityStr(municipality);
+//        item.setMunicipalityStr(municipality);
         item.setDistrictStr(district);
         item.setContactStr(contacts);
         listViewItemList.add(item);

@@ -4,6 +4,9 @@
     <string name="tab_text_2" tools:ignore="MissingTranslation">Tab 2</string>
     <string name="title_activity_maps" tools:ignore="MissingTranslation">Set Home</string>
     <string name="title_activity_report" tools:ignore="MissingTranslation">Report</string>
+    <string name="title_activity_visited" tools:ignore="MissingTranslation">Visited Locations</string>
+    <string name="title_activity_login" tools:ignore="MissingTranslation">SignUp/In</string>
+
     <string name="server_ip" tools:ignore="MissingTranslation">http://192.168.254.44:3000</string>
 
 <!--    Questionnaire model-->

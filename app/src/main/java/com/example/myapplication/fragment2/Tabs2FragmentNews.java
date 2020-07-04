@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Half;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.example.myapplication.NewsDetailActivity;
@@ -54,7 +56,8 @@ public class Tabs2FragmentNews extends ListFragment {
 //            String d = example.run("http://192.168.43.192:3000/rss/") ;
         Request request = new Request.Builder()
 //                .url("http://192.168.43.192:3000/rss/")
-                .url("http://192.168.0.33:3000/rss/")
+//                .url("http://192.168.0.33:3000/rss/")
+                .url("https://covidnasdjagno.herokuapp.com/api/covid/news/")
 
 //                .url("https://reqres.in/api/users?page=2")
                 .build();
@@ -77,13 +80,14 @@ public class Tabs2FragmentNews extends ListFragment {
                     JSONObject reader = null;
                     try {
                         reader = new JSONObject(myResponse);
-                        JSONArray items = reader.getJSONArray("items");
+                        JSONObject feeds = reader.getJSONObject("feed");
+                        JSONArray items = reader.getJSONArray("entries");
 
                         for (int i=0; i<items.length(); i++) {
                             JSONObject all = items.getJSONObject(i);
                             String title = all.getString("title");
-                            String creator = all.getString("creator");
-                            String date = all.getString("pubDate");
+                            String creator = all.getString("author");
+                            String date = all.getString("published");
                             String link = all.getString("link");
                             SimpleDateFormat format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
                             Date date1 = null;
@@ -123,6 +127,7 @@ public class Tabs2FragmentNews extends ListFragment {
 //                                    android.R.layout., Collections.singletonList(myResponse));
 //                            CustomListAdapter adapter = new CustomListAdapter(getActivity().getBaseContext(), myResponse);
 //                            setListAdapter(adapter);
+//                            Toast.makeText(getActivity(), creator)
                             adapter.notifyDataSetChanged();
 
 
